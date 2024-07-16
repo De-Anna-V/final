@@ -21,6 +21,9 @@ class PostViewSet(ModelViewSet):
 
     
 
+
+
+
 @api_view(['GET'])
 def posts_list_view(request):
     posts = Post.objects.all()
