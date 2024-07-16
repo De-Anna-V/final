@@ -20,18 +20,3 @@ class PostViewSet(ModelViewSet):
         serializer.save(user=self.request.user)
 
     
-
-
-
-
-@api_view(['GET'])
-def posts_list_view(request):
-    posts = Post.objects.all()
-    serialised_posts = PostSerializer(posts, many = True)
-    return Response(serialised_posts.data)
-
-@api_view(['GET'])
-def comments_list_view(request):
-    comments = Comment.objects.all()
-    serialised_comments = CommentSerializer(comments, many = True)
-    return Response(serialised_comments.data)
